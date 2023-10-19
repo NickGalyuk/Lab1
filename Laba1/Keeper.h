@@ -1,6 +1,12 @@
 #pragma once
-#include <iostream>
-#include <fstream>
+#ifndef KEEPER_H
+#define KEEPER_H
+
+#include "Base.h"
+#include "Fish.h"
+#include "Bird.h"
+#include "Cat.h"
+
 class Keeper
 {
 private:
@@ -18,3 +24,4 @@ public:
     void loadFromFile(const std::string& filename);
 };
 
+#endif
