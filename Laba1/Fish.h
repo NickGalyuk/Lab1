@@ -1,21 +1,24 @@
 #pragma once
+
+
 #include "Base.h"
 
-class Fish : public Base 
-{
+class Fish : public Base {
 private:
-    char* foodtype;
+    char* feedingType;
 
 public:
     Fish();
-    Fish(const char* breed, const char* color, const char* foodtype);
+    Fish(const char* breed, const char* color, const char* feedingType);
     Fish(const Fish& other);
     ~Fish();
 
-    const char* getfoodtype() const;
-    void setfoodtype(const char* foodtype);
+    const char* getFeedingType() const;
 
-    
+    void printInfo() const override;
     void saveToFile(std::ofstream& file) const override;
     void loadFromFile(std::ifstream& file) override;
+
+    Fish& operator=(const Fish& other);
+    void setFeedingType(const char* feedingType);
 };

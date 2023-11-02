@@ -7,21 +7,23 @@
 #include "Bird.h"
 #include "Cat.h"
 
-class Keeper
-{
-private:
-    static const int maxObjects = 50;
-    Base* objects[maxObjects];
-    int objectCount;
-
+class Keeper {
 public:
     Keeper();
     ~Keeper();
 
-    void addObject(Base* obj);
-    void removeObject(int index);
-    void saveToFile(const std::string& filename) const;
-    void loadFromFile(const std::string& filename);
+    void addAnimal(Base* animal);
+    void removeAnimal(int index);
+    void printAllAnimals() const;
+    void saveToFile(const char* filename) const;
+    void loadFromFile(const char* filename);
+
+private:
+    Base** animals;
+    int capacity;
+    int size;
+
+    void resize();
 };
 
 #endif
